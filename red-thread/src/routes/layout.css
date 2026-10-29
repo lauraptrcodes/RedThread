@@ -1,1 +1,29 @@
 @import 'tailwindcss';
+
+@theme {
+	--font-display: 'Climate Crisis', sans-serif;
+
+	/* Palette "soft vaporwave" */
+	--color-background: #001850;
+	--color-accent: #5b29a7; /* too dark for text on background: borders, buttons, highlights */
+	--color-muted: #00a9ab; /* secondary text, captions, metadata */
+	--color-body: #1fe0e0; /* body text */
+	--color-heading: #ff6bde; /* headings */
+	--color-link: #ff6bde;
+}
+
+@layer base {
+	body {
+		@apply bg-background text-body;
+	}
+
+	h1,
+	h2,
+	h3 {
+		@apply font-display text-heading;
+	}
+
+	a {
+		@apply text-link underline underline-offset-4 hover:text-body;
+	}
+}
